@@ -1,0 +1,406 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    color: #f5f5f5;
+    /*background: #1a0505;*/
+    /* Ganti background warna menjadi gambar */
+    background-image: url('wallpaperDARKRED.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* Pastikan gambar menutupi seluruh layar */
+    background-attachment: fixed; /* Opsi: Jika Anda ingin gambar tetap saat di-scroll */
+    background-color: #1a0505; /* Warna fallback jika gambar gagal dimuat */
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 35px;
+    backdrop-filter: blur(10px);
+    background: rgba(20, 0, 0, 0.25);
+    z-index: 20;
+}
+nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 500;
+}
+nav a:hover { 
+    color: #ff3b3b; 
+}
+
+/* SECTIONS */
+section {
+    height: 100vh;
+    padding: 120px 80px;
+    align-items: center;
+}
+
+/* HOME */
+#home {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+#home-text h1 {
+    font-size: 56px;
+    margin: 0;
+    font-weight: 700;
+}
+
+#home-text p {
+    font-size: 22px;
+    color: #e3bdbd;
+    margin-bottom: 0;
+}
+
+/* Gaya untuk sub-judul dan tombol */
+.subtitle-and-buttons {
+    /* Gunakan Flexbox untuk menempatkan subjudul dan tombol secara rapi di bawah H1 */
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; /* Jarak antara H1 dan Subjudul */
+}
+
+/* Gaya untuk wadah tombol */
+.home-buttons {
+    margin-top: 15px; /* Memberi jarak antara 'Future Software Engineer' dan tombol */
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    /* HAPUS: margin-top: 20px; */ 
+    
+    /* Gunakan display: inline-block untuk jarak horizontal yang benar */
+    display: inline-block;
+    margin-right: 15px; /* Jarak antara tombol pertama dan kedua */
+    text-decoration: none;
+}
+
+
+/* Gaya Tombol View School saat NORMAL (sudah ada di kode Anda) */
+.btn-main,
+.btn-outline,
+.btn-secondary {
+    border: 2px solid #ff3b3b; /* Border Merah */
+    background: transparent; /* Background Transparan */
+    color: #ff3b3b; /* Teks Merah */
+    text-decoration: none; /* Sudah fix, tanpa underline */
+    transition: background 0.3s, color 0.3s; /* Tambahkan transisi untuk animasi halus */
+}
+
+/* Gaya Tombol saat HOVER (Kondisi yang Anda inginkan) */
+.btn-main:hover,
+.btn-outline:hover,
+.btn-secondary:hover { 
+    /* 1. Background berubah menjadi merah solid */
+    background: #ff3b3b; 
+    /* 2. Warna teks berubah menjadi putih */
+    color: white; 
+    /* Pilihan: Hapus border agar terlihat lebih solid */
+    border-color: #ff3b3b; 
+}
+
+/* IMAGE STYLE */
+#home-img img {
+    width: 350px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 40);
+}
+/* ===============================
+   RESUME / EDUCATION GLASS EFFECT
+   =============================== */
+
+/* 1. Gaya Umum Section Resume */
+#resume {
+    /* Pastikan konten section di tengah secara horizontal dan vertikal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Gaya untuk Kartu Kaca (Resume Card) */
+.resume-card {
+    /* Ukuran kartu kaca */
+    max-width: 750px;
+    padding: 50px;    
+    /* Warna latar belakang transparan (putih sangat transparan) */
+    background: rgba(255, 255, 255, 0.1);     
+    /* KUNCI GLASSMORHISM */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);    
+    /* Border dan Shadow Halus */
+    border-radius: 20px; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Shadow lebih gelap karena background Anda gelap */
+    border: 1px solid rgba(255, 255, 255, 0.1);    
+    /* Penataan Teks di dalam kartu */
+    text-align: left; /* Teks rata kiri */
+}
+
+/* 3. Penyesuaian Teks di dalam Kartu */
+.resume-card h1 {
+    font-size: 3.2em; 
+    margin-bottom: 20px;
+}
+
+.resume-card p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #f5f5f5; /* Pastikan warna teks sangat terang */
+}
+
+.resume-card .years {
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    color: #e3bdbd; 
+}
+
+#projects {
+    /* 1. Atur display ke flex */
+    display: flex;  
+    /* 2. Atur arah susunan menjadi kolom (vertikal) */
+    flex-direction: column;  
+    /* 3. Tengahkan semua item secara horizontal (judul dan kartu) */
+    align-items: center;   
+    /* Atur jarak tambahan di bagian atas atau bawah jika diperlukan */
+    justify-content: center;
+
+}
+
+/* Pastikan elemen judul tidak memiliki margin negatif yang berlebihan */
+#projects h1 {
+    /* Memberi jarak di bawah judul sebelum kartu dimulai */
+    margin-bottom: 50px; 
+    /* Properti warna sudah ada di inline style, tapi bisa ditambahkan di sini */
+    color: white; 
+    font-size: 3.2em; 
+}
+
+.container {
+    display: flex; /* Mengaktifkan Flexbox */
+    flex-direction: row; /* Menyusun item dalam baris (horizontal) */
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 0 10px;
+}
+
+/* **CSS Baru untuk Gambar** */
+.card img {
+    width: 100%; /* Membuat lebar gambar sama dengan lebar kartu */
+    height: 100%; /* Membuat tinggi gambar sama dengan tinggi kartu */
+    /* Memastikan gambar menutupi area kartu tanpa terdistorsi, dan memotong bagian yang berlebihan */
+    object-fit: cover; 
+    /* Menerapkan radius sudut yang sama dengan kartu */
+    border-radius: 10px; 
+}
+
+/* Pertahankan efek hover yang sudah Anda buat */
+.card:hover {
+    transform: translateY(-20px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10; 
+}
+
+/* Container Utama (#about) untuk Tata Letak Dua Kolom */
+#about {
+    display: flex; /* Mengaktifkan Flexbox */
+    align-items: center; /* Mengatur elemen di tengah secara vertikal */
+    padding: 80px 100px; /* Jarak atas/bawah dan kiri/kanan */
+    
+    min-height: 450px; /* Agar section memiliki tinggi minimum */
+}
+
+/* --- KOLOM KIRI: Gambar --- */
+.about-image {
+    flex: 0 0 350px; /* Lebar tetap untuk gambar */
+    margin-right: 50px; /* Jarak antara gambar dan teks */
+    height: 400px; /* Tinggi tetap untuk gambar */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- KOLOM KANAN: Teks Konten --- */
+.about-content {
+    flex: 1; 
+    color: #f0f0f0; /* Warna teks terang */    
+    /* --- GLASSMORPHISM START --- */    
+    /* 1. Latar Belakang Semi-Transparan */
+    /* Menggunakan latar belakang gelap yang sangat transparan */
+    background-color: rgba(255, 255, 255, 0.15); /* Hampir transparan (0.05) */    
+    /* 2. Properti Kaca: Mengaburkan elemen di belakangnya */
+    backdrop-filter: blur(10px);     
+    /* 3. Border Tipis Transparan (Opsional, tapi meningkatkan efek) */
+    border: 1px solid rgba(255, 255, 255, 0.18);     
+    /* Properti Tambahan untuk Estetika */
+    border-radius: 15px; /* Sudut membulat */
+    padding: 30px; /* Jarak di dalam kotak */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Bayangan yang menonjolkan kotak */    
+}
+
+/* Styling untuk judul "About Me" Anda */
+.about-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Menghilangkan style inline color dan menerapkan style di CSS */
+.about-content h1 span {
+    color: #ff3b3b; /* Warna merah aksen */
+    border-bottom: 3px solid #ff3b3b; /* Garis bawah (opsional) */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    text-align: justify;
+    margin-top: 15px; /* Jarak antar paragraf */
+}
+
+#contact {
+    padding: 80px 100px;
+    min-height: 500px;
+    color: #f0f0f0;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px; /* Jarak antara dua kolom */
+}
+
+/* --- Kolom Kiri: FORMULIR --- */
+.contact-form-area {
+    flex: 1.5; /* Memberi ruang lebih besar untuk formulir */
+}
+
+.contact-form-area h1 {
+    color: #ff3b3b; /* Aksen Merah */
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.contact-form-area p {
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+.contact-form-area input,
+.contact-form-area textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    background-color: #2a2a2a; /* Input Background Darker */
+    color: #f0f0f0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.contact-form-area input:focus,
+.contact-form-area textarea:focus {
+    border-color: #ff3b3b; /* Border merah saat fokus */
+    outline: none;
+}
+
+.contact-form-area button {
+    background-color: #ff3b3b; /* Tombol Merah Solid */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-form-area button:hover {
+    background-color: #e62e2e; /* Merah sedikit lebih gelap saat hover */
+}
+
+
+/* --- Kolom Kanan: INFO KONTAK --- */
+.contact-info-area {
+    flex: 1;
+    /* Efek Glassmorphism bisa diterapkan di sini agar menonjol */
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-area h2 {
+    color: #ff3b3b;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.contact-detail i {
+    color: #ff3b3b; /* Icon Merah */
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+.social-links {
+    margin-top: 30px; /* Jarak dari nomor WA */
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Garis pemisah tipis */
+    display: flex; /* Untuk menyusun ikon secara horizontal */
+    gap: 20px; /* Jarak antar ikon */
+    justify-content: center; /* Pusatkan ikon jika Anda suka */
+}
+
+.social-links a {
+    color: #f0f0f0; /* Icon Social Media Putih */
+    font-size: 2em;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff3b3b; /* Icon Social Media Merah saat hover */
+    transform: translateY(-5px);
+}
