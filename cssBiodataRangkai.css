@@ -403,4 +403,53 @@ section {
 .social-links a:hover {
     color: #ff3b3b; /* Icon Social Media Merah saat hover */
     transform: translateY(-5px);
+
+}
+
+/* --- MEDIA QUERIES UNTUK TAMPILAN HP (RESPONSIVE) --- */
+@media (max-width: 768px) {
+    
+    /* 1. SECTION UTAMA */
+    /* Ubah padding agar tidak terlalu lebar di samping */
+    #about {
+        flex-direction: column; /* Membuat kolom bertumpuk dari atas ke bawah */
+        padding: 40px 20px; /* Kurangi padding samping */
+        min-height: auto; /* Biarkan tinggi menyesuaikan konten */
+    }
+    
+    /* 2. GAMBAR (KOLOM KIRI) */
+    .about-image {
+        /* Gambar akan mengambil lebar penuh layar (tapi dibatasi oleh padding section) */
+        flex: 1 1 100%; 
+        width: 100%;
+        margin-right: 0; /* Hapus margin yang memisahkan gambar dan teks */
+        margin-bottom: 30px; /* Tambahkan jarak di bawah gambar */
+        height: 300px; /* Kurangi tinggi gambar agar tidak terlalu besar */
+    }
+    
+    /* 3. KONTEN (KOLOM KANAN) */
+    .about-content {
+        flex: 1 1 100%; /* Konten mengambil lebar penuh */
+        /* Hapus margin jika ada yang mengganggu */
+        margin: 0; 
+        padding: 20px; /* Kurangi padding di kotak glassmorphism jika terlalu besar */
+    }
+
+    .about-content h1 {
+        font-size: 2em;
+    }
+
+    /* --- SECTION PROJECTS --- */
+    .projects-container {
+        flex-direction: column; 
+        /* Pastikan elemen anak di projects-container juga mengambil lebar penuh */
+        align-items: center;
+        gap: 30px;
+    }
+    
+    /* Pastikan setiap item project mengambil lebar penuh */
+    .project-item { 
+        width: 100%; 
+        max-width: 400px; /* Batasi lebar agar tidak terlalu melebar di layar tablet */
+    }  
 }
